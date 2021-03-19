@@ -1,0 +1,66 @@
+.highlight {
+    border-radius: 0.6rem;
+    width: 100%;
+    line-height: 1.7;
+    background-color: rgb(40, 42, 54);
+    margin: 15px 0;
+    padding: 5px;
+
+    & > pre {
+        padding: 5px 10px;
+    }
+
+    & > figcaption {
+        width: 100%;
+        color: #303846;
+        background-color: transparent;
+        zoom: 1;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.custom {
+            min-height: 1.5rem;
+            display: flex;
+
+            .custom-carbon {
+                display: flex;
+                margin: 0.2rem 0 0 0.5rem;
+                font-size: 0;
+                align-items: center;
+
+                .custom-carbon-dot--red {
+                    background-color: #ff5f56;
+                }
+
+                .custom-carbon-dot--yellow {
+                    background-color: #ffbd2e;
+                }
+
+                .custom-carbon-dot--green {
+                    background-color: #27c93f;
+                }
+
+                .custom-carbon-dot {
+                    display: inline-block;
+                    margin: 0 4px;
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        & > span {
+            color: #fff;
+            margin-right: 10px;
+            user-select: none;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+/*********** Search Section *************/
+.section {
+    animation: fadeInDown;
+    animation-duration: 0.4s;
+    @apply py-20;
+
+    .search-wrapper {
+    @apply relative;
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        & > input {
+            height: 70px;
+            padding: 0.5rem 1rem;
+            color: #495057;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            box-shadow: 0 15px 60px rgb(62 62 62 / 10%);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+
+        @apply block w-full rounded border-0 bg-clip-padding bg-white text-base font-normal;
+
+            &:focus,
+            &:hover {
+                outline: none;
+                box-shadow: 0 15px 60px rgb(62 62 62 / 20%);
+            }
+        }
+    }
+}
+
+/*********** Content Section *************/
+.section.content {
+    ul.sidenav {
+        border-right: 1px solid #e2e2e2;
+        padding-right: 20px;
+
+        & > li:not(:last-child) {
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        & > li {
+            a {
+                padding: 20px 0;
+                color: #222;
+                display: block;
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+
+        .sidelist {
+            ul {
+                display: none;
+            }
+        }
+
+        .parent {
+            & > a {
+                color: #ff0043 !important;
+                position: relative;
+                margin-left: 10px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: -10px;
+                    top: 25%;
+                    height: 50%;
+                    width: 1px;
+                    background: #ff0043;
+                }
+            }
+            ul {
+                display: block;
+                margin-bottom: 10px;
+
+                li.active > a {
+                    margin-left: 10px;
+                    &:before {
+                        height: 5px;
+                        width: 5px;
+                        border-radius: 50%;
+                        display: block;
+                        top: 13px;
+                    }
+                }
+
+                a {
+                    padding: 5px 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #222;
+                }
+            }
+        }
+    }
+
+    nav.pagination {
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        border-radius: 0.25rem;
+        margin-top: 50px;
+        justify-content: space-between;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+
+        a {
+            color: #ff0043;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    .feedback {
+        padding-top: 50px;
+        margin-top: 50px;
+        border-top: 1px solid #e2e2e2;
+
+    @apply flex justify-between;
+
+        button.love {
+        @apply bg-green-100 mr-3 border-green-100;
+            &.active {
+                svg {
+                    color: #fff;
+                    fill: #fff;
+                }
+                background-color: #00bec4;
+            }
+        }
+
+        button.hate {
+        @apply bg-red-100 border-red-100;
+
+            &.active {
+                svg {
+                    color: #fff;
+                    fill: #fff;
+                }
+                background-color: #f9756e;
+            }
+        }
+    }
+}
