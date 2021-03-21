@@ -2,6 +2,7 @@ const plugin = require("tailwindcss/plugin")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
+    darkMode: "class",
     theme: {
         extend: {
             fontFamily: {
@@ -82,6 +83,7 @@ module.exports = {
         textColor: ["responsive", "hover", "focus", "group-hover", "dark", "light", "dark:hover", "light:hover"],
     },
     plugins: [
+        // eslint-disable-next-line no-unused-vars
         plugin(function({ addVariant, theme, e, prefix, config }) {
             const colorModeVariants = ["light", "dark"]
             colorModeVariants.forEach(mode => {
