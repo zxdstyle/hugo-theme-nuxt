@@ -1,0 +1,98 @@
+{{ $currentPage := . -}}
+
+<div class="fixed left-0 z-20 block w-full header_mobile_aside shadow-nuxt lg:hidden sm:w-1/2">
+    <div class="h-full mx-auto transition-colors duration-300 ease-linear light:bg-light-surface dark:bg-dark-surface">
+        <div class="relative h-full content-wrapper">
+            <div class="h-full pt-4 overflow-y-auto">
+                {{ range .Site.Menus.docs -}}
+                <div class="header_mobile_aside_group">
+                    <h3 class="flex items-center pb-2 text-gray-600 uppercase font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="feather feather-chevron-right w-4 h-4 mr-2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>{{ .Name }}</span>
+                    </h3>
+                    {{ if .HasChildren -}}
+                    <ul class="pb-6">
+                        {{ range .Children -}}
+                            {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+                            {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+                            {{ if $active }}
+                            <li class="py-2">
+                                <a href='{{ .URL }}' aria-current="page" class="block transition-colors duration-300 ease-linear dark:text-dark-onSurfacePrimary hover:text-nuxt-lightgreen text-nuxt-lightgreen nuxt-link-active">
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                            {{ else }}
+                            <li class="py-2">
+                                <a href='{{ .URL }}' class="block transition-colors duration-300 ease-linear dark:text-dark-onSurfacePrimary hover:text-nuxt-lightgreen">
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                            {{ end -}}
+                        {{ end -}}
+                    </ul>
+                    {{ end -}}
+                </div>
+                {{ end -}}
+            </div>
+            <button class="absolute flex items-center justify-center w-10 h-10 transition-colors duration-300 ease-linear bg-gray-200 inner-button sm:hidden text-nuxt-gray dark:bg-dark-elevatedSurface dark:text-dark-onSurfaceSecondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="block h-5 transition-colors duration-300 ease-linear fill-current">
+                    <path d="M231.6 256l130.1-130.1c4.7-4.7 4.7-12.3 0-17l-22.6-22.6c-4.7-4.7-12.3-4.7-17 0L192 216.4 61.9 86.3c-4.7-4.7-12.3-4.7-17 0l-22.6 22.6c-4.7 4.7-4.7 12.3 0 17L152.4 256 22.3 386.1c-4.7 4.7-4.7 12.3 0 17l22.6 22.6c4.7 4.7 12.3 4.7 17 0L192 295.6l130.1 130.1c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17L231.6 256z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="absolute flex items-center justify-center w-10 h-10 transition-colors duration-300 ease-linear bg-gray-200 bookmark-button text-nuxt-gray dark:bg-dark-surface dark:text-dark-onSurfaceSecondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="block transition-colors duration-300 ease-linear stroke-current text-nuxt-gray dark:text-dark-onSurfaceSecondary">
+                <line x1="8" x2="21" y1="6" y2="6"></line>
+                <line x1="8" x2="21" y1="12" y2="12"></line>
+                <line x1="8" x2="21" y1="18" y2="18"></line>
+                <line x1="3" x2="3" y1="6" y2="6"></line>
+                <line x1="3" x2="3" y1="12" y2="12"></line>
+                <line x1="3" x2="3" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+</div>
+<aside class="opacity-transition block bg-gray-100 mt-8 -mx-4 lg:bg-transparent lg:mt-0 lg:mx-0 lg:inset-0 z-90 lg:mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-1/4 lg:block hidden lg:block">
+    <div class="h-full overflow-y-auto scrolling-touch text-center lg:text-left lg:h-auto lg:block lg:relative lg:sticky lg:top-24">
+        <nav class="pt-8 lg:overflow-y-auto lg:block lg:pl-0 lg:pr-8 sticky?lg:max-h-(screen-24) hidden">
+            {{ range .Site.Menus.docs -}}
+            <div>
+                <h3 class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="feather feather-chevron-down w-4 h-4 mr-2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                    <span>{{ .Name }}</span>
+                </h3>
+                {{ if .HasChildren -}}
+                <ul class="pb-8 pl-2">
+                    {{ range .Children -}}
+                        {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+                        {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+                        {{ if $active }}
+                        <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                            <a href='{{ .URL }}' aria-current="page" class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between text-nuxt-lightgreen bg-green-100 dark:bg-green-800 dark:text-white nuxt-link-active">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ else -}}
+                        <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                            <a href='{{ .URL }}' class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+                {{ end -}}
+            </div>
+            {{ end -}}
+            <p class="uppercase font-bold pb-6">
+                <a href="/docs/release-notes" class="block bg-gray-100 dark:bg-dark-surface p-2 rounded border dark:border-gray-900 text-sm text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary">
+                    版本<span class="text-nuxt-lightgreen">2.15.2</span>
+                </a>
+            </p>
+        </nav>
+    </div>
+</aside>

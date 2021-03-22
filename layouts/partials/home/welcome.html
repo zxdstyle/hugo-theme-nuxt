@@ -1,0 +1,30 @@
+<div class="bg-light-elevatedSurface dark:bg-dark-elevatedSurface shadow-nuxt relative">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between py-16 sm:py-24">
+            <div class="w-full lg:w-1/2 xl:w-6/12 text-center lg:text-left py-4 sm:p-0">
+                <h1 class="text-4xl xl:text-5xl text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary font-medium tracking-normal leading-tight mb-6">
+                    {{ .Title | safeHTML }}
+                </h1>
+                <h2 class="xl:text-lg text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary font-medium leading-relaxed mb-6">{{ .Description | safeHTML }}</h2>
+                <div class="flex flex-col sm:block py-4">
+                    <a href="{{ .StartBtn.Url }}" class="no-underline inline-block font-medium text-sm px-4 py-2 shadow uppercase rounded hover:shadow-md sm:mr-4 py-3 px-6 text-base mb-4 primary">
+                        <div class="inline-block fill-current stroke-current mr-1 flex flex-row items-center" >
+                            <i data-feather='{{ .StartBtn.Icon }}' class="mr-1"></i>
+                            {{ .StartBtn.Text }}
+                        </div>
+                    </a>
+                    <a href='{{ .GithubBtn.Url }}' target="_blank" rel="noopener" class="no-underline inline-block font-medium text-sm px-4 py-2 shadow uppercase rounded hover:shadow-md sm:mr-4 py-3 px-6 text-base secondary">
+                        <div class="inline-block fill-current stroke-current flex flex-row items-center" >
+                            <i data-feather='{{ .GithubBtn.Icon }}' class="mr-1"></i>
+                            {{ .GithubBtn.Text }}
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <figure  class="hidden lg:block lg:w-5/12 text-center">
+                {{- $image := resources.Get "images/struct.svg" -}}
+                <img src='{{ $image.Permalink }}' alt="">
+            </figure>
+        </div>
+    </div>
+</div>

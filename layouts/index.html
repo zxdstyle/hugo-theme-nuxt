@@ -1,3 +1,17 @@
 {{ define "main" }}
+<main class="lg:block relative bg-light-elevatedSurface dark:bg-dark-elevatedSurface transition-colors duration-300 ease-linear">
+    <div>
+        {{ if .Params.Section.Welcome.Active }}
+        {{- partial "home/welcome.html" .Params.Section.Welcome -}}
+        {{ end }}
 
+        {{ if .Params.Section.Introduce.Active }}
+        {{- partial "home/introduce.html" .Params.Section.Introduce -}}
+        {{ end }}
+
+        {{ if .Params.Section.Feature.Active }}
+        {{- partial "home/feature.html" .Params.Section.Feature -}}
+        {{ end }}
+    </div>
+</main>
 {{ end }}
