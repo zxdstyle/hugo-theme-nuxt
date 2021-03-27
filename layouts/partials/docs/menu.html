@@ -11,9 +11,12 @@
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                         <span>{{ .Name }}</span>
+
                     </h3>
-                    {{ if .HasChildren -}}
+
+                    {{ if .HasChildren  -}}
                     <ul class="pb-6">
+
                         {{ range .Children -}}
                             {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
                             {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
@@ -58,15 +61,22 @@
     <div class="h-full overflow-y-auto scrolling-touch text-center lg:text-left lg:h-auto lg:block lg:relative lg:sticky lg:top-24">
         <nav class="pt-8 lg:overflow-y-auto lg:block lg:pl-0 lg:pr-8 sticky?lg:max-h-(screen-24) hidden">
             {{ range .Site.Menus.docs -}}
-            <div>
-                <h3 class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold">
+            <div class="mb-4">
+                <h3 class='cursor-pointer flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold'>
+                    {{ if $currentPage.HasMenuCurrent "docs" . }}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="feather feather-chevron-down w-4 h-4 mr-2">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
-                    <span>{{ .Name }}</span>
+                    {{ else }}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="feather feather-chevron-right w-4 h-4 mr-2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                    {{ end }}
+                    <span class="menu-title">{{ .Name }}</span>
                 </h3>
+
                 {{ if .HasChildren -}}
-                <ul class="pb-8 pl-2">
+                <ul class='pb-5 pl-2 {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ else }}hidden{{ end }}'>
                     {{ range .Children -}}
                         {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
                         {{- $active = or $active (eq $currentPage.Section .Identifier) -}}

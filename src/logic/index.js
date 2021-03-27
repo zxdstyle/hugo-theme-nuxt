@@ -1,6 +1,6 @@
 import { register } from "./feather"
 import { initHighlight } from "./hightlight"
-import { initTheme } from "./theme"
+// import { initTheme } from "./theme"
 
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
@@ -10,6 +10,18 @@ document.onreadystatechange = () => {
         // 初始化语法高亮
         initHighlight()
 
-        initTheme()
+        // initTheme()
+
+        menuClick()
+    }
+}
+
+function menuClick() {
+    let menuTitle = document.getElementsByClassName("menu-title")
+    for (let i = 0; i < menuTitle.length; i++) {
+        menuTitle[i].onclick = el => {
+            let menuList = el.target.parentNode.parentNode.lastElementChild
+            menuList.classList.toggle("hidden")
+        }
     }
 }

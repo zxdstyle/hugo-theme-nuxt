@@ -220,27 +220,9 @@
                     <div class="h-full overflow-y-auto scrolling-touch text-center lg:text-left lg:h-auto lg:block lg:relative lg:sticky lg:top-24">
                         <nav class="pt-8 lg:overflow-y-auto lg:block lg:pl-0 lg:pr-8 sticky?lg:max-h-(screen-24) hidden">
                             <div>
-                                <a
-                                    href="/docs/2.x/deployment/deploying-to-21yunbox"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>Deployment</span></a
+                                <h3
+                                    class="cursor-pointer flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold"
                                 >
-                                <!---->
-                            </div>
-                            <div>
-                                <h3 class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -253,9 +235,9 @@
                                     >
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
-                                    <span>开始使用</span>
+                                    <span class="menu-title">开始使用</span>
                                 </h3>
-                                <ul class="pb-8 pl-2">
+                                <ul class="pb-8 pl-2 hidden">
                                     <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
                                         <a
                                             href="/docs/2.x/get-started/installation"
@@ -308,10 +290,10 @@
                                 </ul>
                             </div>
                             <div>
-                                <a
-                                    href="/docs/2.x/concepts/views"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
+                                <h3
+                                    class="menu-title cursor-pointer flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear font-bold"
+                                >
+                                    <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         stroke="currentColor"
@@ -319,114 +301,65 @@
                                         stroke-linejoin="round"
                                         stroke-width="2"
                                         viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
+                                        class="feather feather-chevron-down w-4 h-4 mr-2"
                                     >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                        <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
-                                    <span>概念</span></a
-                                >
-                                <!---->
+                                    <span>开始使用</span>
+                                </h3>
+                                <ul class="pb-8 pl-2 hidden">
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/installation"
+                                            aria-current="page"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between text-nuxt-lightgreen bg-green-100 dark:bg-green-800 dark:text-white nuxt-link-active"
+                                        >
+                                            Installation
+                                        </a>
+                                    </li>
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/routing"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between"
+                                        >
+                                            Routing
+                                        </a>
+                                    </li>
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/directory-structure"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between"
+                                        >
+                                            Directory Structure
+                                        </a>
+                                    </li>
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/commands"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between"
+                                        >
+                                            Commands and Deployment
+                                        </a>
+                                    </li>
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/conclusion"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between"
+                                        >
+                                            Conclusion
+                                        </a>
+                                    </li>
+                                    <li class="text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary">
+                                        <a
+                                            href="/docs/2.x/get-started/upgrading"
+                                            class="p-2 pl-4 flex rounded hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen transition-colors duration-300 ease-linear justify-between"
+                                        >
+                                            Upgrading
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div>
-                                <a
-                                    href="/docs/2.x/features/rendering-modes"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>特性</span></a
-                                >
-                                <!---->
-                            </div>
-                            <div>
-                                <a
-                                    href="/docs/2.x/directory-structure/nuxt"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>目录结构</span></a
-                                >
-                                <!---->
-                            </div>
-                            <div>
-                                <a
-                                    href="/docs/2.x/configuration-glossary/configuration-alias"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>配置词汇表</span></a
-                                >
-                                <!---->
-                            </div>
-                            <div>
-                                <a
-                                    href="/docs/2.x/internals-glossary/context"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>内部术语表</span></a
-                                >
-                                <!---->
-                            </div>
-                            <div>
-                                <a
-                                    href="/docs/2.x/components-glossary/pages-fetch"
-                                    class="flex items-center uppercase font-medium text-light-onSurfaceSecondary dark:text-dark-onSurfaceSecondary pb-2 transition-colors duration-300 ease-linear hover:text-nuxt-lightgreen mb-4 block"
-                                    ><svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        viewBox="0 0 24 24"
-                                        class="feather feather-chevron-right w-4 h-4 mr-2"
-                                    >
-                                        <polyline points="9 18 15 12 9 6"></polyline>
-                                    </svg>
-                                    <span>组件词汇表</span></a
-                                >
-                                <!---->
-                            </div>
+
                             <p class="uppercase font-bold pb-6">
                                 <a
                                     href="/docs/release-notes"
@@ -1045,4 +978,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss"></style>
